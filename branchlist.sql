@@ -1,0 +1,181 @@
+/*
+ Navicat Premium Data Transfer
+
+ Source Server         : localhost
+ Source Server Type    : MySQL
+ Source Server Version : 100424
+ Source Host           : localhost:3306
+ Source Schema         : db_template
+
+ Target Server Type    : MySQL
+ Target Server Version : 100424
+ File Encoding         : 65001
+
+ Date: 24/06/2022 08:28:34
+*/
+
+SET NAMES utf8mb4;
+SET FOREIGN_KEY_CHECKS = 0;
+
+-- ----------------------------
+-- Table structure for branchlist
+-- ----------------------------
+DROP TABLE IF EXISTS `branchlist`;
+CREATE TABLE `branchlist`  (
+  `branch_code` varchar(255) CHARACTER SET latin1 COLLATE latin1_swedish_ci NOT NULL DEFAULT '',
+  `branch_name` varchar(255) CHARACTER SET latin1 COLLATE latin1_swedish_ci NULL DEFAULT NULL,
+  `parent_branch` varchar(255) CHARACTER SET latin1 COLLATE latin1_swedish_ci NULL DEFAULT NULL,
+  `updated_at` datetime(0) NULL DEFAULT NULL,
+  `created_at` datetime(0) NULL DEFAULT NULL,
+  `branch_type` int(11) NULL DEFAULT 0,
+  PRIMARY KEY (`branch_code`) USING BTREE
+) ENGINE = InnoDB CHARACTER SET = latin1 COLLATE = latin1_swedish_ci ROW_FORMAT = Dynamic;
+
+-- ----------------------------
+-- Records of branchlist
+-- ----------------------------
+INSERT INTO `branchlist` VALUES ('000', 'KANTOR PUSAT NON OPERASIONAL', '000', NULL, NULL, 1);
+INSERT INTO `branchlist` VALUES ('110', 'KC DIPONEGORO', '000', NULL, NULL, 1);
+INSERT INTO `branchlist` VALUES ('111', 'KCP PAJAJARAN', '110', NULL, NULL, 2);
+INSERT INTO `branchlist` VALUES ('112', 'RS LEMBANG', '110', NULL, NULL, 2);
+INSERT INTO `branchlist` VALUES ('114', 'RS PADALARANG', '110', NULL, NULL, 2);
+INSERT INTO `branchlist` VALUES ('115', 'RS PAMANUKAN', '171', NULL, NULL, 2);
+INSERT INTO `branchlist` VALUES ('116', 'RS PANGALENGAN', '140', NULL, NULL, 2);
+INSERT INTO `branchlist` VALUES ('117', 'RS CIANJUR', '251', NULL, NULL, 2);
+INSERT INTO `branchlist` VALUES ('119', 'RS CIKAJANG', '141', NULL, NULL, 2);
+INSERT INTO `branchlist` VALUES ('120', 'KCP BUAHBATU', '110', NULL, NULL, 2);
+INSERT INTO `branchlist` VALUES ('140', 'KC SUCORE', '000', NULL, NULL, 1);
+INSERT INTO `branchlist` VALUES ('141', 'KC GARUT', '000', NULL, NULL, 1);
+INSERT INTO `branchlist` VALUES ('142', 'KC PURWAKARTA', '000', NULL, NULL, 1);
+INSERT INTO `branchlist` VALUES ('143', 'KCP CIKAMPEK', '142', NULL, NULL, 2);
+INSERT INTO `branchlist` VALUES ('144', 'RS SOREANG', '140', NULL, NULL, 2);
+INSERT INTO `branchlist` VALUES ('145', 'RS MAJALAYA', '140', NULL, NULL, 2);
+INSERT INTO `branchlist` VALUES ('146', 'RS UJUNGBERUNG', '140', NULL, NULL, 2);
+INSERT INTO `branchlist` VALUES ('147', 'RS CIBATU', '141', NULL, NULL, 2);
+INSERT INTO `branchlist` VALUES ('150', 'KCP KOPO', '140', NULL, NULL, 2);
+INSERT INTO `branchlist` VALUES ('160', 'KCP CIMAHI', '110', NULL, NULL, 2);
+INSERT INTO `branchlist` VALUES ('170', 'KCP SURYASUMANTRI', '110', NULL, NULL, 2);
+INSERT INTO `branchlist` VALUES ('171', 'KC SUBANG', '000', NULL, NULL, 1);
+INSERT INTO `branchlist` VALUES ('180', 'KCP SOEKARNO HATTA', '140', NULL, NULL, 2);
+INSERT INTO `branchlist` VALUES ('181', 'KCP SUMEDANG', '140', NULL, NULL, 2);
+INSERT INTO `branchlist` VALUES ('200', 'KC THE ENERGY', '000', NULL, NULL, 1);
+INSERT INTO `branchlist` VALUES ('201', 'KCP RADIO DALAM', '200', NULL, NULL, 2);
+INSERT INTO `branchlist` VALUES ('202', 'RS TANJUNG PRIOK', '200', NULL, NULL, 2);
+INSERT INTO `branchlist` VALUES ('210', 'KCP KEBON JERUK', '200', NULL, NULL, 2);
+INSERT INTO `branchlist` VALUES ('211', 'KCP PEMUDA', '213', NULL, NULL, 2);
+INSERT INTO `branchlist` VALUES ('212', 'KCP JAKPUS', '213', NULL, NULL, 2);
+INSERT INTO `branchlist` VALUES ('213', 'KC AMPERA', '000', NULL, NULL, 1);
+INSERT INTO `branchlist` VALUES ('214', 'KC TANGERANG', '000', NULL, NULL, 1);
+INSERT INTO `branchlist` VALUES ('215', 'KCP SERANG', '214', NULL, NULL, 2);
+INSERT INTO `branchlist` VALUES ('217', 'KCP GADING SERPONG', '214', NULL, NULL, 2);
+INSERT INTO `branchlist` VALUES ('230', 'RS CIKARANG', '213', NULL, NULL, 2);
+INSERT INTO `branchlist` VALUES ('231', 'RS BALARAJA', '214', NULL, NULL, 2);
+INSERT INTO `branchlist` VALUES ('232', 'KCP CILEGON', '931', NULL, NULL, 2);
+INSERT INTO `branchlist` VALUES ('233', 'RS PAMULANG', '213', NULL, NULL, 2);
+INSERT INTO `branchlist` VALUES ('234', 'RS CILEDUG', '214', NULL, NULL, 2);
+INSERT INTO `branchlist` VALUES ('235', 'RS BEKASI', '213', NULL, NULL, 2);
+INSERT INTO `branchlist` VALUES ('236', 'RS KARAWANG', '142', NULL, NULL, 2);
+INSERT INTO `branchlist` VALUES ('237', 'RS RANGKASBITUNG', '214', NULL, NULL, 2);
+INSERT INTO `branchlist` VALUES ('238', 'KCP MANGGA DUA', '200', NULL, NULL, 2);
+INSERT INTO `branchlist` VALUES ('239', 'KCP BINTARO', '213', NULL, NULL, 2);
+INSERT INTO `branchlist` VALUES ('240', 'KCP CAKUNG', '213', NULL, NULL, 2);
+INSERT INTO `branchlist` VALUES ('245', 'KCP PANDEGLANG', '214', NULL, NULL, 2);
+INSERT INTO `branchlist` VALUES ('250', 'KC BOGOR', '000', NULL, NULL, 1);
+INSERT INTO `branchlist` VALUES ('251', 'KC SUKABUMI', '000', NULL, NULL, 1);
+INSERT INTO `branchlist` VALUES ('252', 'RS DEPOK', '250', NULL, NULL, 2);
+INSERT INTO `branchlist` VALUES ('253', 'RS CIBINONG', '250', NULL, NULL, 2);
+INSERT INTO `branchlist` VALUES ('254', 'RS PARUNG', '250', NULL, NULL, 2);
+INSERT INTO `branchlist` VALUES ('255', 'RS LEUWILIANG', '250', NULL, NULL, 2);
+INSERT INTO `branchlist` VALUES ('256', 'KCP PASAR ANYA', '250', NULL, NULL, 2);
+INSERT INTO `branchlist` VALUES ('260', 'KC TASIKMALAYA', '000', NULL, NULL, 1);
+INSERT INTO `branchlist` VALUES ('261', 'KCP BANJAR', '260', NULL, NULL, 2);
+INSERT INTO `branchlist` VALUES ('262', 'RS SINGAPARNA', '260', NULL, NULL, 2);
+INSERT INTO `branchlist` VALUES ('263', 'RS CIAMIS', '260', NULL, NULL, 2);
+INSERT INTO `branchlist` VALUES ('264', 'RS PANGANDARAN', '260', NULL, NULL, 2);
+INSERT INTO `branchlist` VALUES ('265', 'RS GUNUNG SABEULAH', '260', NULL, NULL, 2);
+INSERT INTO `branchlist` VALUES ('266', 'RS CIAWI', '260', NULL, NULL, 2);
+INSERT INTO `branchlist` VALUES ('267', 'RS MANONJAYA', '260', NULL, NULL, 2);
+INSERT INTO `branchlist` VALUES ('268', 'RS KARANGNUNGGAL', '260', NULL, NULL, 2);
+INSERT INTO `branchlist` VALUES ('269', 'RS KAWALI', '260', NULL, NULL, 2);
+INSERT INTO `branchlist` VALUES ('270', 'RS CIBADAK', '251', NULL, NULL, 2);
+INSERT INTO `branchlist` VALUES ('271', 'RS PELABUHAN RATU', '251', NULL, NULL, 2);
+INSERT INTO `branchlist` VALUES ('300', 'KC CIREBON', '000', NULL, NULL, 1);
+INSERT INTO `branchlist` VALUES ('301', 'RS MAJALENGKA', '300', NULL, NULL, 2);
+INSERT INTO `branchlist` VALUES ('302', 'KCP KUNINGAN', '300', NULL, NULL, 2);
+INSERT INTO `branchlist` VALUES ('303', 'KCP INDRAMAYU', '300', NULL, NULL, 2);
+INSERT INTO `branchlist` VALUES ('304', 'RS SUMBER', '300', NULL, NULL, 2);
+INSERT INTO `branchlist` VALUES ('305', 'RS LOSARI', '300', NULL, NULL, 2);
+INSERT INTO `branchlist` VALUES ('306', 'KCP PATROL', '171', NULL, NULL, 2);
+INSERT INTO `branchlist` VALUES ('307', 'RS LURAGUNG', '300', NULL, NULL, 2);
+INSERT INTO `branchlist` VALUES ('308', 'RS PALIMANAN', '300', NULL, NULL, 2);
+INSERT INTO `branchlist` VALUES ('309', 'KCP CILIMUS', '300', NULL, NULL, 2);
+INSERT INTO `branchlist` VALUES ('310', 'KC SEMARANG', '000', NULL, NULL, 1);
+INSERT INTO `branchlist` VALUES ('311', 'RS SALATIGA', '310', NULL, NULL, 2);
+INSERT INTO `branchlist` VALUES ('312', 'KCP MAGELANG', '340', NULL, NULL, 2);
+INSERT INTO `branchlist` VALUES ('313', 'RS KUDUS', '310', NULL, NULL, 2);
+INSERT INTO `branchlist` VALUES ('314', 'RS PURWODADI', '310', NULL, NULL, 2);
+INSERT INTO `branchlist` VALUES ('315', 'RS PATI', '310', NULL, NULL, 2);
+INSERT INTO `branchlist` VALUES ('316', 'KCP KENDAL', '310', NULL, NULL, 2);
+INSERT INTO `branchlist` VALUES ('317', 'RS JEPARA', '310', NULL, NULL, 2);
+INSERT INTO `branchlist` VALUES ('318', 'KCP UNGARAN', '310', NULL, NULL, 2);
+INSERT INTO `branchlist` VALUES ('320', 'KC PURWOKERTO', '000', NULL, NULL, 1);
+INSERT INTO `branchlist` VALUES ('321', 'RS CILACAP', '320', NULL, NULL, 2);
+INSERT INTO `branchlist` VALUES ('322', 'KCP PURBALINGGA', '320', NULL, NULL, 2);
+INSERT INTO `branchlist` VALUES ('323', 'KCP KEBUMEN', '320', NULL, NULL, 2);
+INSERT INTO `branchlist` VALUES ('324', 'KCP BANJAR NEGARA', '320', NULL, NULL, 2);
+INSERT INTO `branchlist` VALUES ('325', 'KCP PURWOREJO', '325', NULL, NULL, 2);
+INSERT INTO `branchlist` VALUES ('330', 'KC SOLO', '000', NULL, NULL, 1);
+INSERT INTO `branchlist` VALUES ('331', 'RS BOYOLALI', '330', NULL, NULL, 2);
+INSERT INTO `branchlist` VALUES ('332', 'RS SRAGEN', '330', NULL, NULL, 2);
+INSERT INTO `branchlist` VALUES ('333', 'KCP WONOGIRI', '330', NULL, NULL, 2);
+INSERT INTO `branchlist` VALUES ('334', 'KCP KLATEN', '330', NULL, NULL, 2);
+INSERT INTO `branchlist` VALUES ('335', 'KCP KARANGANYAR', '330', NULL, NULL, 2);
+INSERT INTO `branchlist` VALUES ('340', 'KC YOGYAKARTA', '000', NULL, NULL, 1);
+INSERT INTO `branchlist` VALUES ('341', 'RS BANTUL', '340', NULL, NULL, 2);
+INSERT INTO `branchlist` VALUES ('342', 'RS SLEMAN', '340', NULL, NULL, 2);
+INSERT INTO `branchlist` VALUES ('343', 'RS WATES', '340', NULL, NULL, 2);
+INSERT INTO `branchlist` VALUES ('344', 'RS WONOSARI', '340', NULL, NULL, 2);
+INSERT INTO `branchlist` VALUES ('350', 'KC SURABAYA', '000', NULL, NULL, 1);
+INSERT INTO `branchlist` VALUES ('351', 'RS SIDOARJO', '350', NULL, NULL, 2);
+INSERT INTO `branchlist` VALUES ('352', 'RS MOJOKERTO', '350', NULL, NULL, 2);
+INSERT INTO `branchlist` VALUES ('353', 'RS GRESIK', '350', NULL, NULL, 2);
+INSERT INTO `branchlist` VALUES ('354', 'RS JEMURSARI', '350', NULL, NULL, 2);
+INSERT INTO `branchlist` VALUES ('355', 'KCP KERTAJAYA', '350', NULL, NULL, 2);
+INSERT INTO `branchlist` VALUES ('356', 'KCP JOMBANG', '410', NULL, NULL, 2);
+INSERT INTO `branchlist` VALUES ('357', 'RS PAMEKASAN', '350', NULL, NULL, 2);
+INSERT INTO `branchlist` VALUES ('358', 'RS SUMENEP', '350', NULL, NULL, 2);
+INSERT INTO `branchlist` VALUES ('359', 'KCP HR MUHAMMAD', '350', NULL, NULL, 2);
+INSERT INTO `branchlist` VALUES ('360', 'KC MALANG', '000', NULL, NULL, 1);
+INSERT INTO `branchlist` VALUES ('361', 'RS BATU', '360', NULL, NULL, 2);
+INSERT INTO `branchlist` VALUES ('362', 'RS KEPANJEN', '360', NULL, NULL, 2);
+INSERT INTO `branchlist` VALUES ('363', 'KCP PASURUAN', '360', NULL, NULL, 2);
+INSERT INTO `branchlist` VALUES ('364', 'RS PROBOLINGGO', '360', NULL, NULL, 2);
+INSERT INTO `branchlist` VALUES ('365', 'KCP LAWANG', '360', NULL, NULL, 2);
+INSERT INTO `branchlist` VALUES ('370', 'KC DENPASAR', '000', NULL, NULL, 1);
+INSERT INTO `branchlist` VALUES ('371', 'RS GIANYAR', '370', NULL, NULL, 2);
+INSERT INTO `branchlist` VALUES ('372', 'RS TABANAN', '370', NULL, NULL, 2);
+INSERT INTO `branchlist` VALUES ('373', 'RS SINGARAJA', '370', NULL, NULL, 2);
+INSERT INTO `branchlist` VALUES ('376', 'RS PASAR ATOM', '350', NULL, NULL, 2);
+INSERT INTO `branchlist` VALUES ('380', 'KC PEKALONGAN', '000', NULL, NULL, 1);
+INSERT INTO `branchlist` VALUES ('381', 'KCP Brebes', '380', NULL, NULL, 2);
+INSERT INTO `branchlist` VALUES ('390', 'KC MADIUN', '000', NULL, NULL, 1);
+INSERT INTO `branchlist` VALUES ('400', 'KC PALEMBANG', '000', NULL, NULL, 1);
+INSERT INTO `branchlist` VALUES ('401', 'RS KAYU AGUNG', '400', NULL, NULL, 2);
+INSERT INTO `branchlist` VALUES ('410', 'KC KEDIRI', '000', NULL, NULL, 1);
+INSERT INTO `branchlist` VALUES ('420', 'KC JEMBER', '000', NULL, NULL, 1);
+INSERT INTO `branchlist` VALUES ('430', 'KC Medan ', '430', NULL, NULL, 2);
+INSERT INTO `branchlist` VALUES ('440', 'KC Makasar', '440', NULL, NULL, 2);
+INSERT INTO `branchlist` VALUES ('913', 'KC KORPORAT', '913', NULL, NULL, 2);
+INSERT INTO `branchlist` VALUES ('931', 'KC KARAWACI', '913', NULL, NULL, 2);
+INSERT INTO `branchlist` VALUES ('932', 'KCP COMMERCIAL CENTER CIKARANG', '913', NULL, NULL, 2);
+INSERT INTO `branchlist` VALUES ('933', 'KCP CIBUBUR - KORPORAT', '913', NULL, NULL, 2);
+INSERT INTO `branchlist` VALUES ('934', 'KCP POSCO CILEGON', '931', NULL, NULL, 2);
+INSERT INTO `branchlist` VALUES ('935', 'KCP KEMANG PRATAMA BEKASI', '913', NULL, NULL, 2);
+INSERT INTO `branchlist` VALUES ('936', 'KCP UNION SQUARE CIKARANG', '913', NULL, NULL, 2);
+INSERT INTO `branchlist` VALUES ('937', 'KCP SADANG', '142', NULL, NULL, 2);
+INSERT INTO `branchlist` VALUES ('939', 'KCP KELAPA GADING - KORPORAT', '913', NULL, NULL, 2);
+INSERT INTO `branchlist` VALUES ('940', 'KCP Central Park', '913', NULL, NULL, 2);
+INSERT INTO `branchlist` VALUES ('941', 'KCP Pantai Indah Kapuk', '913', NULL, NULL, 2);
+INSERT INTO `branchlist` VALUES ('942', 'KCP CITRA RAYA', '931', NULL, NULL, 2);
+
+SET FOREIGN_KEY_CHECKS = 1;
